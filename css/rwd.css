@@ -1,3 +1,7 @@
+* {
+    -webkit-overflow-scrolling: touch;
+}
+
 #mobile-btn{
 	float: right;
 	display: none;
