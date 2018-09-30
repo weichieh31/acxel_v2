@@ -14,3 +14,10 @@ $(document).on('tap','#mobile-btn',function(){
 		menuopen = true;
 	}
 });
+
+$(document).on('tap','.socialBox a',function(){
+	var urltxt = $(this).attd("href");
+	if( urltxt == '#' ){
+		$('body').scrollTop(0);
+	}
+});
