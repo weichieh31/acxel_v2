@@ -67,11 +67,11 @@
         <div id="mobile-menu">
             <div class="mm-block-o">
                 <div class="mm-block">
-                    <div class="mmenu-item" data-url='about'>about ACXEL</div>
-                    <div class="mmenu-item" data-url='service'>Services</div>
-                    <div class="mmenu-item" data-url='proposition'>Value Proposition</div>
-                    <div class="mmenu-item" data-url='framework'>ACXEL Framework</div>
-                    <div class="mmenu-item" data-url='partnerShip'>Partnership</div>
+                    <div class="mmenu-item menuBtn" data-url='about'>about ACXEL</div>
+                    <div class="mmenu-item menuBtn" data-url='service'>Services</div>
+                    <div class="mmenu-item menuBtn" data-url='proposition'>Value Proposition</div>
+                    <div class="mmenu-item menuBtn" data-url='framework'>ACXEL Framework</div>
+                    <div class="mmenu-item menuBtn" data-url='partnerShip'>Partnership</div>
                 </div>
             </div>
         </div>
@@ -255,10 +255,13 @@
 
             $('body').on('tap', '.menuBtn', function () {
                 console.log('tap');
-                $('.m-btn').removeClass('m-btn-a');
-                $('#mobile-menu').slideUp();
-                $('html body').css({'overflow':'auto'});
-                menuopen = false;
+                if( menuopen ){
+                    $('.m-btn').removeClass('m-btn-a');
+                    $('#mobile-menu').slideUp();
+                    $('html body').css({'overflow':'auto'});
+                    menuopen = false;
+                }
+                
 
                 $body.animate({
                     scrollTop: $('#' + $(this).attr('data-url')).offset().top
