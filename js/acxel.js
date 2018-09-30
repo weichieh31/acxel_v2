@@ -3,7 +3,7 @@ $(document).on('tap','#mobile-btn',function(){
 	console.log(menuopen);
 	if( menuopen ){
 		$('.m-btn').removeClass('m-btn-a');
-		$('#mobile-menu').slideUp();
+		$('#mobile-menu').hide();
 		$('html body').css({'overflow':'auto'});
 		menuopen = false;
 	}else{

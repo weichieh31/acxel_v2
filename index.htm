@@ -257,12 +257,13 @@
                 //console.log('tap');
                 if( menuopen ){
                     $('.m-btn').removeClass('m-btn-a');
-                    $('#mobile-menu').slideUp();
+                    $('#mobile-menu').hide();
                     $('html body').css({'overflow':'auto'});
                     $('body').scrollTop(0);
                     menuopen = false;
                 }
                 
+
 
                 $body.animate({
                     scrollTop: $('#' + $(this).attr('data-url')).offset().top
