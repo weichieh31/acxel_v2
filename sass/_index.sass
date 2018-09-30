@@ -1,0 +1,221 @@
+
+html,body 
+	width: 100%
+	height: 100%
+h1 
+	font-size: 3.5rem
+h2 
+	font-size: 2rem
+.fs_i
+	font-style: italic
+=header($height,$bgcolor)
+	display: flex
+	justify-content: space-between
+	align-items: center
+	height: #{$height}
+	padding: 0 50px
+	background-color: #{$bgcolor}
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 10
+	width: 100%
+	// .menu
+	.menuContainer
+		display: flex
+		flex-wrap: wrap
+		* + *
+			margin-left: 25px
+		.menuBtn
+			cursor: pointer
+
+
+=addPagecurve($pic-name)
+	position: relative
+	&:after
+		content: ''
+		left: 50%
+		transform: (translateX(-50%))
+		width: 100%
+		position: absolute
+		z-index: 1
+		min-width: 1000px
+		// left: 0
+		background-size: 100% 100%
+		height: image-height("../images/#{$pic-name}")
+		background-image: url("../images/#{$pic-name}")
+		@content
+
+.mainContainer
+	width: 100%
+	overflow: hidden
+
+.titleBold
+	font-family: 'Archivo Black', sans-serif
+.header
+	+header(60px,'#1a1a1a')
+	padding: 0 50px
+	.logo
+		+bg('logo.png')
+	// .menu
+
+	.menuContainer
+		.menuBtn
+			&:hover 
+				color: #ddd
+.section
+	width: 100%			
+	.sectionContainer
+		position: relative
+		z-index: 2
+		max-width: 1024px
+		margin: 0 auto
+		padding: 100px 25px
+
+#about
+	width: 100%
+	// +aspect-ratio(1030,619)
+	height: 750px
+	+coverBg
+	+bgi('bg.png')
+	.sectionContainer
+		position: absolute
+		width: 100%
+		height: 100%
+		max-width: 100%
+		top: 0
+		left: 0
+		display: flex
+		justify-content: center
+		align-items: center
+	.titleContainer 
+		.mainTite
+			+bg('pc_title.png')
+		h2 
+			max-width: 640px
+			text-align: center
+			margin: 0 auto
+			margin-top: 25px
+
+	+addPagecurve('unitButtom00.png')
+		bottom: 0
+
+#service
+	+addPagecurve('unitbuttom01.png')
+		top: 100%
+	.serviceWrap
+		display: flex
+		justify-content: space-around
+		max-width: 900px
+		padding: 0 40px
+		flex-wrap: wrap
+		margin: 50px auto 0
+		.service-line
+			+bg('service_line.png')
+			position: relative
+			top: 114px
+			+phone 
+				display: none
+		.service
+			padding: 25px 0
+			width: 184px
+			.pic
+				width: 184px
+				height: 184px
+				+coverBg
+			h2 
+				margin-top: 15px
+.center
+	margin-left: auto
+	margin-right: auto
+#proposition
+	background-color: #7de5cc
+	+addPagecurve('unitbuttom02.png')
+		top: 100%
+	.valueWrap
+		margin-top: 50px
+		
+		.valueBox
+			width: 30%
+			display: inline-block
+			vertical-align: text-top
+			overflow: hidden
+			+notLast
+				margin-right: 3%
+		.pic
+			width: 50px
+			height: 50px
+			margin-top: 3px
+			display: inline-block
+			vertical-align: text-top
+		.txtBox
+			width: calc(100% - 55px)
+			display: inline-block
+			vertical-align: text-top
+			padding-left: 10px
+		
+
+#framework
+	+addPagecurve('unitbuttom03.png')
+		bottom: 0
+	.titleBox
+		h3 
+			max-width: 500px
+#blockChain
+	background-color: #e1ffe7
+#design
+	background-color: #a7f1e0
+	+addPagecurve('unitbuttom04.png')
+		top: 100%
+#partnerShip
+	.cardContainer
+		max-width: 800px
+	.imgBox
+		min-height: 80px
+		display: flex
+		align-items: center
+.cardBox
+	width: 100%
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-around
+	.card
+		width: 40%
+		min-width: 300px
+
+#footer
+	display: flex
+	justify-content: space-between
+	align-items: center
+	height: 130px
+	padding: 0 50px
+	background-color: #1c1d30
+	z-index: 10
+	width: 100%
+	// .menu
+	.menuContainer
+		display: flex
+		flex-wrap: wrap
+		* + *
+			margin-left: 25px
+		.menuBtn
+			cursor: pointer
+
+	.logo
+		+bg('logo.png')
+
+	.socialBox
+		a 
+			display: inline-block
+			margin-left: 10px
+			width: 36px
+			height: 36px
+			font-size: 22px
+			background-color: #fff
+			border-radius: 50%
+			text-align: center
+			line-height: 36px
+			&:hover 
+				+opacity(0.8)
+				text-decoration: none
+
