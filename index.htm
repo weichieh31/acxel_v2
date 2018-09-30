@@ -254,7 +254,7 @@
             var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 
             $('body').on('tap', '.menuBtn', function () {
-                //console.log($('#service').offset().top)
+                console.log('tap');
                 $('.m-btn').removeClass('m-btn-a');
                 $('#mobile-menu').slideUp();
                 $('html body').css({'overflow':'auto'});
