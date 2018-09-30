@@ -39,10 +39,12 @@
     
     <script type="text/javascript" src="js/jquerymobile.js"></script>
     <script type="text/javascript" src="js/acxel.js"></script>
+    
     <!-- archung js -->
     <!-- <script type="text/javascript" src="js/ChungTool.js"></script> -->
     <!-- <script type="text/javascript" src="js/index.js"></script> -->
 </head>
+
 
 <body>
     <div class="mainContainer">
@@ -242,6 +244,7 @@
             </div>
         </div>
     </div>
+
     <script>
         $(document).ready(function () {
             initMenu();
@@ -250,8 +253,12 @@
         function initMenu() {
             var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
 
-            $('body').on('click', '.menuBtn', function () {
-                console.log($('#service').offset().top)
+            $('body').on('tap', '.menuBtn', function () {
+                //console.log($('#service').offset().top)
+                $('.m-btn').removeClass('m-btn-a');
+                $('#mobile-menu').slideUp();
+                $('html body').css({'overflow':'auto'});
+                menuopen = false;
 
                 $body.animate({
                     scrollTop: $('#' + $(this).attr('data-url')).offset().top
