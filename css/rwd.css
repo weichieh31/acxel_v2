@@ -94,6 +94,7 @@
 .md-mobile{
 	display: none;
 	margin-top: 10px;
+	margin-bottom: -20px;
 	color: SteelBlue;
 }
 
